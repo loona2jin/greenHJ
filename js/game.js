@@ -58,7 +58,7 @@ function init() {
     createjs.Sound.alternateExtensions = ["mp3"];
     createjs.Sound.registerSounds(
         [{id:"fail", src:"fail.mp3"},
-        {id:"bgm", src:"bgm.mp3"}
+        //{id:"bgm", src:"bgm.mp3"}
 	]
     , "assets/");
 }
@@ -235,7 +235,6 @@ function restart() {
 
 function die() {
     createjs.Sound.play("fail");
-	createjs.Sound.play("bgm");
     dead = true;
     masterPipeDelay=78;
     masterPipeSec=1000;
