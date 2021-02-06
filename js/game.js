@@ -158,7 +158,7 @@ function soundComplete(event) {
 function playSound(){
     //var props = new createjs.PlayPropsConfig().set({interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1, volume: 0.5})
     //bgm = createjs.Sound.play("bgm", props);
-	createjs.Sound.play("bgm");
+	bgm = createjs.Sound.play("bgm");
     addClickToPlay(); 
 }
 
