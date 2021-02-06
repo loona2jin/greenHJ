@@ -56,7 +56,7 @@ function handleProgress(e) {
     document.getElementById('loading').innerHTML = '로딩 중...' + e.loaded * 100 + '%';
 }
 function handleComplete() {
-    
+    document.getElementById('loading').remove();
     background = new createjs.Shape();
     background.graphics.beginBitmapFill(loader.getResult("background")).drawRect(0,0,w,h);
     
