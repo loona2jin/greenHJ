@@ -360,7 +360,7 @@ function tick(event) {
     if (startJump == true) {
 	if(!isFirst) {
             isFirst = true;
-            playSound();
+            //playSound();
         }
         startJump = false;
         stage.removeChild(title);
