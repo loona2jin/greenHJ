@@ -58,7 +58,7 @@ function init() {
     createjs.Sound.alternateExtensions = ["mp3"];
     createjs.Sound.registerSounds(
         [{id:"fail", src:"fail.mp3"},
-        //{id:"bgm", src:"bgm.mp3"}
+        {id:"bgm", src:"bgm.mp3"}
 	]
     , "assets/");
 }
@@ -357,6 +357,10 @@ function tick(event) {
 
 
     if (startJump == true) {
+	if(!isFirst) {
+		isFirst = true;
+		playSound();
+	}
         startJump = false;
         stage.removeChild(title);
         stage.removeChild(tap);
