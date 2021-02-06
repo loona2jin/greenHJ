@@ -44,7 +44,6 @@ function init() {
         {src:"img/title.png", id:"title"},
         {src:"img/must.png", id:"must"},
         {src:"img/tap.png", id:"tap"},
-	{src:"assets/fail.mp3", id:"fail"},
         {src:"https://ssl.pstatic.net/static/clova/service/clova_ai/event/handwriting/download/나눔손글씨 달의궤도.ttf"}
     ];
 
@@ -135,8 +134,17 @@ function handleComplete() {
     
     createjs.Ticker.timingMode = createjs.Ticker.RAF;
     createjs.Ticker.addEventListener("tick", tick);
-    
-    createjs.Sound.registerSound(loader.getResult("fail"), "fail");
+        
+    createjs.Sound.on("fileload", handleFileLoad);
+    createjs.Sound.alternateExtensions = ["mp3"];
+    createjs.Sound.registerSounds(
+        [{id:"fail", src:"fail.mp3"}]
+    , "assets/");
+}
+
+function handleFileLoad(event) {
+    // A sound has been preloaded. This will fire TWICE
+    console.log("Preloaded:", event.id, event.src);
 }
 
 function handleJumpStart() {
