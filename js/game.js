@@ -46,6 +46,8 @@ function init() {
         {src:"img/title.png", id:"title"},
         {src:"img/must.png", id:"must"},
         {src:"img/tap.png", id:"tap"},
+	{src:"img/play.png", id:"play"},
+        {src:"img/pause.png", id:"pause"},
         {src:"https://ssl.pstatic.net/static/clova/service/clova_ai/event/handwriting/download/나눔손글씨 달의궤도.ttf"}
     ];
 
