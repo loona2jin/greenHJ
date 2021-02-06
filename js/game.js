@@ -143,16 +143,18 @@ function handleComplete() {
     createjs.Ticker.addEventListener("tick", tick);
 }
 
-//function soundComplete(event) {
-//    if(event.id == "bgm") {
-//        setTimeout(function() {
-//            var props = new createjs.PlayPropsConfig().set({interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1, volume: 0.5})
-//            bgm = createjs.Sound.play("bgm", props);
-//
-//           addClickToPlay(); 
-//       },1000);
-//   }
-//}
+function soundComplete(event) {
+    if(event.id == "bgm") {
+        document.getElementById('sound').click();
+    }
+}
+
+function playSound(){
+    var props = new createjs.PlayPropsConfig().set({interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1, volume: 0.5})
+    bgm = createjs.Sound.play("bgm", props);
+
+    addClickToPlay(); 
+ }
 
 function addClickToPause(e) {
     stage.removeChild(pause);
