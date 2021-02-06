@@ -52,9 +52,11 @@ function init() {
     loader.addEventListener("complete", handleComplete);
     loader.loadManifest(manifest);
 }
+
 function handleProgress(e) {
     document.getElementById('loading').innerHTML = '로딩 중...' + e.loaded * 100 + '%';
 }
+
 function handleComplete() {
     document.getElementById('loading').remove();
     background = new createjs.Shape();
@@ -219,9 +221,9 @@ function addClickToStart() {
 function goShare() {
     var countText;
     if (counter.text == 1) {
-        countText = "1;
+        countText = "1 point";
     } else {
-        countText = counter.text;
+        countText = counter.text + " points";
     }
     window.open("https://twitter.com/share?url=https://loona2jin.github.io/greenHJ&text=" + countText +  "점 on 형광초록전희진");
 }
