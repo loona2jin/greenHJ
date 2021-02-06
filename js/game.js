@@ -158,7 +158,11 @@ function soundComplete(event) {
 function playSound(){
     var props = new createjs.PlayPropsConfig().set({interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1, volume: 0.5})
     bgm = createjs.Sound.play("bgm", props);
-    addClickToPlay(); 
+    pause = new createjs.Bitmap(loader.getResult("pause"));
+    pause.x = 10;
+    pause.y = 10;
+    stage.addChild(pause);
+    pause.addEventListener("click", addClickToPause);
 }
 
 function addClickToPause(e) {
