@@ -221,9 +221,9 @@ function addClickToStart() {
 function goShare() {
     var countText;
     if (counter.text == 1) {
-        countText = "1 point";
+        countText = "1";
     } else {
-        countText = counter.text + " points";
+        countText = counter.text;
     }
     window.open("https://twitter.com/share?url=https://loona2jin.github.io/greenHJ&text=" + countText +  "점 on 형광초록전희진");
 }
