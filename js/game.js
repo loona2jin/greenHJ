@@ -156,9 +156,8 @@ function soundComplete(event) {
 }
 
 function playSound(){
-    //var props = new createjs.PlayPropsConfig().set({interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1, volume: 0.5})
-    //bgm = createjs.Sound.play("bgm", props);
-	bgm = createjs.Sound.play("bgm");
+    var props = new createjs.PlayPropsConfig().set({interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1, volume: 0.5})
+    bgm = createjs.Sound.play("bgm", props);
     addClickToPlay(); 
 }
 
@@ -236,6 +235,7 @@ function restart() {
 
 function die() {
     createjs.Sound.play("fail");
+	createjs.Sound.play("bgm");
     dead = true;
     masterPipeDelay=78;
     masterPipeSec=1000;
@@ -358,10 +358,6 @@ function tick(event) {
 
 
     if (startJump == true) {
-	if(!isFirst) {
-            isFirst = true;
-            createjs.Sound.play("bgm");
-        }
         startJump = false;
         stage.removeChild(title);
         stage.removeChild(tap);
