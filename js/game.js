@@ -4,7 +4,7 @@ var stage, w, h, loader, pipe1height, pipe2height, pipe3height, startX, startY, 
 var background, bird, ground, pipe, bottomPipe, pipes, rotationDelta, counter, counterOutline;
 var started = false; 
 var startJump = false;
-var title, tap, must, musts;
+var title, tap, must, musts, play, pause, bgm;
 
 var jumpAmount = 120;
 var jumpTime = 266;
@@ -51,6 +51,13 @@ function init() {
     loader.addEventListener("progress", handleProgress);
     loader.addEventListener("complete", handleComplete);
     loader.loadManifest(manifest);
+    
+    createjs.Sound.on("fileload", soundComplete);
+    createjs.Sound.alternateExtensions = ["mp3"];
+    createjs.Sound.registerSounds(
+        [{id:"fail", src:"fail.mp3"},
+        {id:"bgm", src:"bgm.mp3"}]
+    , "assets/");
 }
 
 function handleProgress(e) {
@@ -134,12 +141,36 @@ function handleComplete() {
     
     createjs.Ticker.timingMode = createjs.Ticker.RAF;
     createjs.Ticker.addEventListener("tick", tick);
+}
+
+function soundComplete(event) {
+    if(event.id == "bgm") {
+        var props = new createjs.PlayPropsConfig().set({interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1, volume: 0.5})
+        bgm = createjs.Sound.play("bgm", props);
         
-    createjs.Sound.on("fileload", handleFileLoad);
-    createjs.Sound.alternateExtensions = ["mp3"];
-    createjs.Sound.registerSounds(
-        [{id:"fail", src:"fail.mp3"}]
-    , "assets/");
+        addClickToPlay();
+    }
+    
+}
+
+function addClickToPause(e) {
+    stage.removeChild(pause);
+    play = new createjs.Bitmap(loader.getResult("play"));
+    play.x = 10;
+    play.y = 10;
+    stage.addChild(play);
+    play.addEventListener("click", addClickToPlay);
+    bgm.volume = 0;
+}
+
+function addClickToPlay(e) {
+    stage.removeChild(play);
+    pause = new createjs.Bitmap(loader.getResult("pause"));
+    pause.x = 10;
+    pause.y = 10;
+    stage.addChild(pause);
+    pause.addEventListener("click", addClickToPause);
+    bgm.volume = 1;
 }
 
 function handleFileLoad(event) {
