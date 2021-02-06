@@ -144,12 +144,12 @@ function handleComplete() {
 }
 
 function soundComplete(event) {
-    if(event.id == "bgm") {
-	setTimeout(function() {
-		document.getElementById('sound').click();
-        	document.getElementsByTagName('body')[0].removeChild(document.getElementById('sound'));
-	},1000);
-    }
+    //if(event.id == "bgm") {
+//	setTimeout(function() {
+//		document.getElementById('sound').click();
+ //       	document.getElementsByTagName('body')[0].removeChild(document.getElementById('sound'));
+//	},1000);
+ //   }
 }
 
 function playSound(){
