@@ -18,6 +18,8 @@ var masterPipeSec = 1000;
 
 var counterShow = false;
 
+var isFirst = false;
+
 function init() {
     if (window.top != window) {
         //document.getElementById("header").style.display = "none";
@@ -356,6 +358,10 @@ function tick(event) {
 
 
     if (startJump == true) {
+	if(!isFirst) {
+            isFirst = true;
+            playSound();
+        }
         startJump = false;
         stage.removeChild(title);
         stage.removeChild(tap);
