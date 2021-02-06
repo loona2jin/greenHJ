@@ -203,7 +203,7 @@ function die() {
     createjs.Tween.removeTweens ( bird );
     createjs.Tween.get(bird).wait(0).to({y:bird.y + 200, rotation: 90}, (380)/1.5, createjs.Ease.linear) //rotate back
             .call(diveBird) // change bird to diving position
-            .to({y:ground.y}, (h - (bird.y+300))/1.5, createjs.Ease.linear); //drop to the bedrock
+            .to({y:ground.y+200}, (h - (bird.y+300))/1.5, createjs.Ease.linear); //drop to the bedrock
     createjs.Tween.get(stage).to({alpha:0}, 100).to({alpha:1}, 100);
     start = new createjs.Bitmap(loader.getResult("start"));
     start.alpha = 0;
