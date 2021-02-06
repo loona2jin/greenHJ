@@ -360,7 +360,7 @@ function tick(event) {
     if (startJump == true) {
 	if(!isFirst) {
             isFirst = true;
-            //playSound();
+            createjs.Sound.play("bgm");
         }
         startJump = false;
         stage.removeChild(title);
