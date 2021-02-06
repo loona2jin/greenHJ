@@ -145,7 +145,10 @@ function handleComplete() {
 
 function soundComplete(event) {
     if(event.id == "bgm") {
-        document.getElementById('sound').click();
+	setTimeout(function() {
+		document.getElementById('sound').click();
+        	document.getElementsByTagName('body')[0].removeChild(document.getElementById('sound'));
+	},1000);
     }
 }
 
@@ -154,7 +157,7 @@ function playSound(){
     bgm = createjs.Sound.play("bgm", props);
 
     addClickToPlay(); 
- }
+}
 
 function addClickToPause(e) {
     stage.removeChild(pause);
