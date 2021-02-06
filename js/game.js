@@ -48,10 +48,13 @@ function init() {
     ];
 
     loader = new createjs.LoadQueue(false);
+    loader.addEventListener("progress", handleProgress);
     loader.addEventListener("complete", handleComplete);
     loader.loadManifest(manifest);
 }
-
+function handleProgress(e) {
+    document.getElementById('loading').innerHTML = '로딩 중...' + e.loaded * 100 + '%';
+}
 function handleComplete() {
     
     background = new createjs.Shape();
