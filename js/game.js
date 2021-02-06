@@ -54,7 +54,7 @@ function init() {
 }
 
 function handleProgress(e) {
-    document.getElementById('loading').innerHTML = '로딩 중...' + e.loaded * 100 + '%';
+    document.getElementById('loading').innerHTML = '로딩 중...' + (e.loaded * 100).toFixed(0) + '%';
 }
 
 function handleComplete() {
@@ -225,7 +225,7 @@ function goShare() {
     } else {
         countText = counter.text;
     }
-    window.open("https://twitter.com/share?url=https://loona2jin.github.io/greenHJ&text=" + countText +  "점 on 형광초록전희진");
+    window.open("https://twitter.com/share?url=https://loona2jin.github.io/greenHJ&text=[HEEKOПG NEWS] " + countText +  "점을 획득했습니다. [공식]");
 }
 
 function tick(event) {
