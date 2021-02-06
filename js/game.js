@@ -59,7 +59,7 @@ function handleProgress(e) {
 }
 
 function handleComplete() {
-    document.getElementById('loading').remove();
+    document.getElementsByTagName('body')[0].removeChild(document.getElementById('loading'));
     background = new createjs.Shape();
     background.graphics.beginBitmapFill(loader.getResult("background")).drawRect(0,0,w,h);
     
