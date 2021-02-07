@@ -354,10 +354,10 @@ function tick(event) {
             counterShow = false;
         }
 		// over 50
-		if(counter.text == 50) {
-			masterPipeDelay = 38;
-			masterPipeSec = 500;
-		}
+		//if(counter.text == 50) {
+		//	masterPipeDelay = 38;
+		//	masterPipeSec = 500;
+		//}
     }
 
 
