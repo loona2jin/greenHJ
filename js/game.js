@@ -339,7 +339,7 @@ function tick(event) {
                     }
                 }
                 pipe.x = (pipe.x - deltaS*300);
-                if (pipe.x <= 30 && pipe.rotation == 0 && pipe.name != "counted") {
+                if (pipe.x <= 80 && pipe.rotation == 0 && pipe.name != "counted") {
                     pipe.name = "counted";
                     counter.text = counter.text + 1;
                     counterOutline.text = counterOutline.text + 1;
