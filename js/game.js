@@ -397,9 +397,10 @@ function tick(event) {
 var removeToast;
 
 function toast(string) {
-    const toast = document.getElementById("toast");
+    var toast = document.getElementById("toast");
 
-    toast.classList.contains("reveal") ?
+	if(toast) {
+	toast.classList.contains("reveal") ?
         (clearTimeout(removeToast), removeToast = setTimeout(function () {
             document.getElementById("toast").classList.remove("reveal")
         }, 4000)) :
@@ -408,4 +409,5 @@ function toast(string) {
         }, 4000)
     toast.classList.add("reveal"),
         toast.innerText = string
+	}
 }
