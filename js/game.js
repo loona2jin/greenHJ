@@ -12,7 +12,7 @@ var jumpTime = 266;
 var dead = false;
 var KEYCODE_SPACE = 32;
 var gap = 250;
-var masterPipeDelay = 78;
+var masterPipeDelay = 88;
 var pipeDelay = masterPipeDelay;
 var masterPipeSec = 1000;
 
@@ -243,7 +243,7 @@ function restart() {
 function die() {
     createjs.Sound.play("fail");
     dead = true;
-    masterPipeDelay=78;
+    masterPipeDelay=88;
     masterPipeSec=1000;
     bird.gotoAndPlay("dive");
     createjs.Tween.removeTweens ( bird );
