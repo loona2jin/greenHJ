@@ -21,7 +21,7 @@ var counterShow = false;
 var isFirst = false;
 
 function init() {
-    toast("50부터 빨리지는거 없앴어요. 편하게 하세요.");
+    //toast("50부터 빨리지는거 없앴어요. 편하게 하세요.");
     if (window.top != window) {
         //document.getElementById("header").style.display = "none";
     }
