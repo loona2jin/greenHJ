@@ -21,7 +21,7 @@ var counterShow = false;
 var isFirst = false;
 
 function init() {
-    //toast("50부터 빨리지는거 없앴어요. 편하게 하세요.");
+    toast("♥저니진 んr己5ぉЙ♥");
     if (window.top != window) {
         //document.getElementById("header").style.display = "none";
     }
@@ -403,10 +403,10 @@ function toast(string) {
 	toast.classList.contains("reveal") ?
         (clearTimeout(removeToast), removeToast = setTimeout(function () {
             document.getElementById("toast").classList.remove("reveal")
-        }, 1500)) :
+        }, 2000)) :
         removeToast = setTimeout(function () {
             document.getElementById("toast").classList.remove("reveal")
-        }, 1500)
+        }, 2000)
     toast.classList.add("reveal"),
         toast.innerText = string
 	}
