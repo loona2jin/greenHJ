@@ -21,7 +21,7 @@ var counterShow = false;
 var isFirst = false;
 
 function init() {
-    toast("♥저니진 んr己5ぉЙ♥");
+    toast("♥ㅇ1달소 んr己5ぉЙ♥");
     if (window.top != window) {
         //document.getElementById("header").style.display = "none";
     }
