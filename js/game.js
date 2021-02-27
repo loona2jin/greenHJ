@@ -46,6 +46,12 @@ function init() {
         {src:"img/share.png", id:"share"},
         {src:"img/title.png", id:"title"},
         {src:"img/must.png", id:"must"},
+	{src:"img/cookie1.png", id:"must1"},
+        {src:"img/cookie2.png", id:"must2"},
+        {src:"img/cookie3.png", id:"must3"},
+        {src:"img/cookie4.png", id:"must4"},
+        {src:"img/cookie5.png", id:"must5"},
+        {src:"img/cookie6.png", id:"must6"},
         {src:"img/tap.png", id:"tap"},
 	{src:"img/play.png", id:"play"},
         {src:"img/pause.png", id:"pause"},
@@ -204,7 +210,7 @@ function handleJumpStart() {
         }
         
         for(var i = 0; i < 3 + Math.floor( Math.random() * 5); i++) {
-	    	var mustd = new createjs.Bitmap(loader.getResult("must"));
+	    	var mustd = new createjs.Bitmap(loader.getResult("must" + Math.floor( Math.random()* 6)));
 	       	mustd.setTransform(bird.x - 70 - Math.floor( Math.random()* 20), bird.y-10 - Math.floor( Math.random()* 20), 1, 1);
 			stage.addChild(mustd);
 			createjs.Tween.get(mustd).to({alpha:1*Math.random(), scale:1*Math.random(), rotation: 0, visible:true}, 80, createjs.Ease.sineInOut).to({alpha:0, scale:0, rotation: 360, visible:false}, 580, createjs.Ease.sineInOut).call(function(){
