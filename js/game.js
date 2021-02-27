@@ -66,7 +66,7 @@ function init() {
     createjs.Sound.on("fileload", soundComplete);
     createjs.Sound.alternateExtensions = ["mp3"];
     createjs.Sound.registerSounds(
-        [{id:"fail", src:"fail.mp3"},
+        [{id:"fail", src:"fail1.mp3"},
         {id:"bgm", src:"bgm.mp3"}
 	]
     , "assets/");
