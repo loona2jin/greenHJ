@@ -21,6 +21,13 @@ var counterShow = false;
 var isFirst = false;
 
 function init() {
+    document.onkeydown = function(keyE) {
+        if(keyE.keyCode == 123) {
+            keyE.preventDefault(); 
+            keyE.returnValue = false;
+        }
+    }
+	
     toast("♥ㅇ1달소 んr己5ぉЙ♥");
     if (window.top != window) {
         //document.getElementById("header").style.display = "none";
